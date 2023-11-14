@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->string('titles');
+            $table->string('title');
             $table->text('body');
             $table->string('img_path')->nullable();
             $table->timestampTz('published_at')->nullable();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->timestamps('');
+            $table->timestamps();
         });
     }
 
